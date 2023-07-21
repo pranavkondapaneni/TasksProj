@@ -1,1 +1,7 @@
-<p>list-elements works!</p>
+<div *ngFor="let checklistValue of checklistValues; let i = index">
+    <input type="checkbox" [(ngModel)]="checklistValue.isChecked" [checked]="checklistValue.isChecked"/>
+    <input type="text" [(ngModel)]="checklistValue.value" id="{{ 'textbox' + i }}">
+</div>
+<input type="text" id="selectthis" (click)="newTask()">
+<p>{{ checklistValues[0].value }}</p>
+<p>{{ checklistValues[0].isChecked }}</p>

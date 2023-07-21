@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
+import { ChecklistValues } from './checklist-values';
 
 @Component({
   selector: 'app-list-elements',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-elements.component.scss']
 })
 export class ListElementsComponent {
+  subheading: string = '';
+  checklistValues: ChecklistValues[] = [];
 
+  newTask() {
+    this.checklistValues.push({ isChecked: false, value: '' });
+    setTimeout(() => {
+        document.getElementById(`textbox${this.checklistValues.length - 1}`)?.focus();}, 0);
+  }
 }
