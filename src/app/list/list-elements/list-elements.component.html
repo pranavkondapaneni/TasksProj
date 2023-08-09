@@ -1,6 +1,6 @@
 <div *ngFor="let checklistValue of checklistValues; let i = index">
     <input type="checkbox" [(ngModel)]="checklistValue.isChecked" [checked]="checklistValue.isChecked"/>
-    <input type="text" [(ngModel)]="checklistValue.value" id="{{ 'textbox' + i }}">
+    <input type="text" [(ngModel)]="checklistValue.value" id="{{ 'textbox' + i }}"><button (click)="deleteTask(checklistValue)">x</button>
 </div>
 <input type="text" id="selectthis" (click)="newTask()">
 <p>{{ checklistValues[0].value }}</p>

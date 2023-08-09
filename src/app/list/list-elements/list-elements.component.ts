@@ -15,4 +15,9 @@ export class ListElementsComponent {
     setTimeout(() => {
         document.getElementById(`textbox${this.checklistValues.length - 1}`)?.focus();}, 0);
   }
+
+  deleteTask(item: ChecklistValues){
+    const index = this.checklistValues.indexOf(item);
+    this.checklistValues.splice(index, 1);
+  }
 }
